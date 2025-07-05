@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "3001:3001"
+    env_file:
+      - ./frontend/.env
+    networks:
+      - app-network
+
+  backend-1a:
+    build: ./backend-1
+    env_file:
+      - ./backend-1/.env
+    networks:
+      - app-network
+
+  backend-1b:
+    build: ./backend-1
+    env_file:
+      - ./backend-1/.env
+    networks:
+      - app-network
+
+  backend-1c:
+    build: ./backend-1
+    env_file:
+      - ./backend-1/.env
+    networks:
+      - app-network
+
+  backend-2a:
+    build: ./backend-2
+    env_file:
+      - ./backend-2/.env
+    networks:
+      - app-network
+
+  backend-2b:
+    build: ./backend-2
+    env_file:
+      - ./backend-2/.env
+    networks:
+      - app-network
+
+  backend-2c:
+    build: ./backend-2
+    env_file:
+      - ./backend-2/.env
+    networks:
+      - app-network
+
+  consumer:
+    build: ./consumer
+    container_name: consumer
+    env_file:
+      - ./consumer/.env
+    ports:
+      - "3030:3030"
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - frontend
+      - backend-1a
+      - backend-1b
+      - backend-1c
+      - backend-2a
+      - backend-2b
+      - backend-2c
+      - consumer
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
