@@ -33,5 +33,8 @@ Project ini merupakan tugas akhir untuk mata kuliah **Topik Khusus** semester ge
 - Pastikan Docker sudah terinstall
 - Buka terminal di direktori project ini
   ```bash
-  ./deploy.sh
+  ./deploy.sh          # Start
+  ./deploy.sh logs     # Check logs
+  ./deploy.sh stop     # Stop
+  ./deploy.sh restart  # Restart
   ```
