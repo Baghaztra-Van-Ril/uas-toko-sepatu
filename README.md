@@ -27,3 +27,11 @@ Project ini merupakan tugas akhir untuk mata kuliah **Topik Khusus** semester ge
 - Aditya Ahmad Alfarison (Frontend Developer)
 - Muhammad Amir Shafwan (Backend Developer)
 - Sultan Maulana Ichiro (Frontend Developer)
+
+## How To Run
+- Pastikan setiap .env sudah benar
+- Pastikan Docker sudah terinstall
+- Buka terminal di direktori project ini
+  ```bash
+  ./deploy.sh
+  ```
