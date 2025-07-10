@@ -18,7 +18,7 @@ services:
     build: ./backend-1
     container_name: backend-1a
     env_file:
-      - ./backend-1/.env
+      - ./backend-1/.env.prod
     environment:
       - PORT=3010
     networks:
@@ -28,7 +28,7 @@ services:
     build: ./backend-1
     container_name: backend-1b
     env_file:
-      - ./backend-1/.env
+      - ./backend-1/.env.prod
     environment:
       - PORT=3010
     networks:
@@ -38,7 +38,7 @@ services:
     build: ./backend-1
     container_name: backend-1c
     env_file:
-      - ./backend-1/.env
+      - ./backend-1/.env.prod
     environment:
       - PORT=3010
     networks:
@@ -48,7 +48,7 @@ services:
     build: ./backend-2
     container_name: backend-2a
     env_file:
-      - ./backend-2/.env
+      - ./backend-2/.env.prod
     environment:
       - PORT=3020
     networks:
@@ -58,7 +58,7 @@ services:
     build: ./backend-2
     container_name: backend-2b
     env_file:
-      - ./backend-2/.env
+      - ./backend-2/.env.prod
     environment:
       - PORT=3020
     networks:
@@ -68,7 +68,7 @@ services:
     build: ./backend-2
     container_name: backend-2c
     env_file:
-      - ./backend-2/.env
+      - ./backend-2/.env.prod
     environment:
       - PORT=3020
     networks:
@@ -78,7 +78,7 @@ services:
     build: ./consumer
     container_name: consumer
     env_file:
-      - ./consumer/.env
+      - ./consumer/.env.prod
     environment:
       - PORT=3030
     networks:
