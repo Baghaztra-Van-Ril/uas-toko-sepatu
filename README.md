@@ -28,13 +28,21 @@ Project ini merupakan tugas akhir untuk mata kuliah **Topik Khusus** semester ge
 - Muhammad Amir Shafwan (Backend Developer)
 - Sultan Maulana Ichiro (Frontend Developer)
 
+---
+
 ## How To Run
-- Pastikan setiap .env sudah benar
-- Pastikan Docker sudah terinstall
-- Buka terminal di direktori project ini
-  ```bash
-  ./deploy.sh          # Start
-  ./deploy.sh logs     # Check logs
-  ./deploy.sh stop     # Stop
-  ./deploy.sh restart  # Restart
-  ```
+Prerequisites:
+- Docker
+
+```bash
+git pull https://github.com/Baghaztra-Van-Ril/uas-toko-sepatu.git
+
+cd uas-toko-sepatu
+
+git submodule update --init --recursive
+
+docker compose up -d --build
+```
+
+- Pastikan setiap submodule memiliki .env.prod
+- Buka browser dan akses `http://localhost`.
